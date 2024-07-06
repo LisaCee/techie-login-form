@@ -1,31 +1,49 @@
-@keyframes hoverFade {
+@keyframes fadeDown {
 	0% {
-		filter: opacity(100%);
-	}
-	75% {
-		filter: opacity(60%)
+		transform: translateY(-100%);
 	}
 	100% {
-		filter: opacity(0);
+		transform: translateY(100%);
 	}
-
 }
 
-#grid {
-	height: 100vh;
-	width: 100vw;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, 150px);
-	grid-template-rows: repeat(auto-fit, 150px);
+.grid {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-content: center;
+	gap: 1px;
+	flex-wrap: wrap;
+	position: relative;
+	background-color: #4F4E4E;
+}
+
+.grid::before {
+	position: absolute;
+	top: 0;
+	content: '';
+	background: rgb(79, 78, 78);
+	background: linear-gradient(#4F4E4E, #5cd7fd, #4F4E4E);
+	animation-name: fadeDown;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
 }
 
 .grid-item {
+	// only works on xl screens
+	width: calc(6.87vw - 1px);
+	height: calc(6.87vw - 1px);
 	background: black;
-	border: 1px solid #232b2b;
+	margin: 2px;
 	transition: background-color 2s ease;
+	z-index: 2;
 
 	&:hover {
-		background-color: blue;
+		background-color: #47CBFFFF;
 		transition: none;
 	}
 
