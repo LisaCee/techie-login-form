@@ -1,0 +1,8 @@
+Things to do:
+- Type components
+- Write tests?
+
+Things I learned:
+- `overflow: hidden` must be on the top-most parent. Using it on the `grid` class didn't work. I had to put it on `body`.
+- It is really hard to make equal size squares that spread across the viewport width and height. It's still a WIP here.
+- If you have a color `transition` that starts at full opacity, you have to use `transition: none`. Otherwise the color fades in and then out.
