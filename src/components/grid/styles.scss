@@ -1,3 +1,5 @@
+@import '../variables';
+
 @keyframes fadeDown {
 	0% {
 		transform: translateY(-100%);
@@ -15,15 +17,15 @@
 	gap: 1px;
 	flex-wrap: wrap;
 	position: relative;
-	background-color: #4F4E4E;
+	background-color: $base-color;
 }
 
 .grid::before {
 	position: absolute;
 	top: 0;
 	content: '';
-	background: rgb(79, 78, 78);
-	background: linear-gradient(#4F4E4E, #5cd7fd, #4F4E4E);
+	background: $base-color;
+	background: linear-gradient($base-color, $neon-blue, $base-color);
 	animation-name: fadeDown;
 	animation-duration: 4s;
 	animation-iteration-count: infinite;
@@ -34,17 +36,17 @@
 }
 
 .grid-item {
-	// only works on xl screens
+	// @todo Update width function for different size screens. Only looks good on XL.
 	width: calc(6.87vw - 1px);
 	height: calc(6.87vw - 1px);
-	background: black;
+	background: $grid-item;
 	margin: 2px;
 	transition: background-color 2s ease;
 	z-index: 2;
 
 	&:hover {
-		background-color: #47CBFFFF;
+		background-color: $neon-blue;
 		transition: none;
 	}
-
 }
+

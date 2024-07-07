@@ -1,9 +1,10 @@
 import './styles.scss';
-
+import Login from '../login';
 
 export function Grid() {
 	return (
 		<div className="grid">
+			<Login/>
 			<div className="grid-item"></div>
 			<div className="grid-item"></div>
 			<div className="grid-item"></div>
